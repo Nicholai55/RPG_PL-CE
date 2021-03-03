@@ -2,7 +2,7 @@
 
 ## Sistema em Java/JS para mestrar mesas de RPG
 
-### __ideia:__ 
+### __Ideia:__
   O objetivo do projeto é criar uma aplicação Web monolítica para Ajudar na organização e dominio de mesas de RPG, oferecendo um sistema de Bate-papo, mostrar imagens e organização das mesas entre jogadores e mestres, conectado a um sistema de banco de dados que irá salvas as informações e modificações dos arquivos.
 
 ### __Integrantes:__
