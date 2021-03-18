@@ -73,6 +73,30 @@ body {
   font-size: 15px;
 }
 
+.btn login {
+  align-items: right;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  outline: 0;
+  border: 0;
+  color: white;
+  background: #2d87cc;
+  font-size: 15px;
+}
+
+.btn register {
+  align-items: left;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  outline: 0;
+  border: 0;
+  color: white;
+  background: #2d87cc;
+  font-size: 15px;
+}
+
 .btn:hover {
   background: #a09486;
 }
