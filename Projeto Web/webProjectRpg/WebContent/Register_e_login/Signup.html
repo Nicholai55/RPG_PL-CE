@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Login And Registration Form</title>
+        <link rel="stylesheet" href="Signup.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="social-icons">
+                    <img src="../images/facebook.png">
+                    <img src="../images/twitter.png">
+                    <img src="../images/instagram.png">
+
+                   <!--Img google? <img src="../images/gp.png">-->
+                </div>
+                <form id="login" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="register" class="input-group" action="adicionaUser" method="POST">
+                    <input type="text" class="input-field" name="nome" placeholder="User Name" required>
+                    <input type="email" class="input-field" name="email" placeholder="Email " required>
+                    <input type="text" class="input-field" name="senha" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+            <div class="Back-homePage"><a href="../" >Return to home page</a></div>
+        </div>
+        <script>
+            // transicao de login pra register e register pra login
+            //L = login & R = register & B botao
+            var transicaoL = document.getElementById("login");
+            var transicaoR = document.getElementById("register");
+            var transicaoB = document.getElementById("btn");
+
+            function register(){
+                transicaoL.style.left = "-400px";
+                transicaoR.style.left = "50px";
+                transicaoB.style.left = "110px";
+            }
+
+            function login(){
+                transicaoL.style.left = "50px";
+                transicaoR.style.left = "450px";
+                transicaoB.style.left = "0px";
+            }
+        </script>
+    </body>
+</html>
