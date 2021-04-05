@@ -11,7 +11,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- entidade mapeada -->
-		<class>projetoRpgWeb.usuario/EntidadeUsuario.java</class>
+		<class>usuario.EntidadeUsuario</class>
 
 		<properties>
 			<!-- dados da conexao -->

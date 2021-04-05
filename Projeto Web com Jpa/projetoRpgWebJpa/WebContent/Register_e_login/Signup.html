@@ -18,9 +18,9 @@
 
                    <!--Img google? <img src="../images/gp.png">-->
                 </div>
-                <form id="login" class="input-group">
-                    <input type="text" class="input-field" placeholder="User Id" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                <form id="login" class="input-group" action="validaUser" method="POST">
+                    <input type="text" class="input-field" name="nome" placeholder="User Name" required>
+                    <input type="text" class="input-field" name="senha" placeholder="Enter Password" required>
                     <input type="checkbox" class="check-box"><span>Remember Password</span>
                     <button type="submit" class="submit-btn">Log In</button>
                 </form>
