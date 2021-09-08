@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/RPG_PL-CE.iml" filepath="$PROJECT_DIR$/.idea/RPG_PL-CE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Back-end/rpg/rpg.iml" filepath="$PROJECT_DIR$/Back-end/rpg/rpg.iml" />
     </modules>
   </component>
 </project>
