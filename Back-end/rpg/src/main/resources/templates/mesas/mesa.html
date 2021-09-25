@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login And Registration Form</title>
+    <link rel="stylesheet" href="/styles/css/mesa.css">
+</head>
+    <body>
+        <div class="general">
+            <p th:text="${id}"/>
+            <p th:text="${nome}"/>
+            <p th:text="${email}"/>
+            <div class="container-mestre">
+                <!--maximo 13 salas -->
+                <div class="image-create-room">
+                    <img src="/styles/images/temporaryPlus.jpg">
+                </div>
+                <div class="create-room">
+                    <tr th:each="mesa: ${mesas}">
+                        <td th:text="${mesa.id}"/>
+                        <td th:text="${mesa.nome}"/>
+                    </tr>
+                </div>
+            </div>
+            <div class="container-player">
+                <div class="image-join-room">
+                    <img src="/styles/images/temporaryPlus.jpg">
+                </div>
+                <div class="join-room">
+                    <tr th:each="personagem: ${personagens}">
+                        <td th:text="${personagem.mesa.id}"/>
+                        <td th:text="${personagem.mesa.nome}"/>
+                    </tr>
+                </div>
+
+            </div>
+        </div>
+        <script>
+        </script>
+    </body>
+</html>
