@@ -8,14 +8,42 @@
     <script src="jogo.js"></script>
   </head>
   <body>
+    <div class="avatar-wrapper">
+      <div class="avatar">
+        <img src="avatar.jpg" id="foto" alt="" />
+      </div>
+      <div class="avatar">
+        <img src="avatar.jpg" id="foto" alt="" />
+      </div>
+      <div class="avatar">
+        <img src="avatar.jpg" id="foto" alt="" />
+      </div>
+      <div class="avatar">
+        <img src="avatar.jpg" id="foto" alt="" />
+      </div>
+      <div class="avatar">
+        <img src="mestre.png" id="foto" alt="" />
+      </div>
+      <div class="ficha">
+        <img src="ficha.png" id="foto" alt="" />
+      </div>
+    </div>
+    <div class="chat-wrapper">
+      <div class="mensagem">
+        <div class="field-text">
+          <textarea cols="50" rows="48" placeholder="Mensagens aqui"></textarea>
+        </div>
+        <div class="chatbox">
+          <input type="text" id="chat" placeholder="Digite aqui" />
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="toolbar">
         <a class="selected" href="#" id="open" onclick="OpenImage()"
           ><img src="open-folder.png"
         /></a>
-        <a href="#" id="save" onclick="SaveImage()"
-          ><img src="save.png"
-        /></a>
+        <a href="#" id="save" onclick="SaveImage()"><img src="save.png" /></a>
         <a href="#" id="brush" onclick="ChangeTool('brush')"
           ><img src="pencil.png"
         /></a>
@@ -35,6 +63,8 @@
           ><img src="hexagon.png"
         /></a>
       </div>
+      <button type="button" class="button">Undo</button>
+      <button type="button" class="button">Clear</button>
       <br />
       <canvas id="my-canvas" width="600" height="600"></canvas>
       <div id="img-data-div">
