@@ -15,8 +15,14 @@
                 </div>
                 <div class="create-room">
                     <tr th:each="mesa: ${mesas}">
-                        <td th:text="${mesa.id}"/>
-                        <td th:text="${mesa.nome}"/>
+                        <form id="formMestre" method="POST" action="/game"
+                              modelAttribute="mesa" hidden>
+                            <input type="text" name="idMesa" th:value="${mesa.id}" />
+                            <input type="text" name="papel" value="MESTRE" />
+                        </form>
+                        <button type="submit" form="formMestre">
+                            <p th:text="${mesa.nome}"/>
+                        </button>
                     </tr>
                 </div>
             </div>
@@ -26,8 +32,15 @@
                 </div>
                 <div class="join-room">
                     <tr th:each="personagem: ${personagens}">
-                        <td th:text="${personagem.mesa.id}"/>
-                        <td th:text="${personagem.mesa.nome}"/>
+                        <form id="formPlayer" method="POST" action="/game"
+                              modelAttribute="mesa" hidden>
+                            <input type="text" name="idMesa" th:value="${personagem.mesa.id}" />
+                            <input type="text" name="idPersonagem" th:value="${personagem.id}" />
+                            <input type="text" name="papel" value="JOGADOR" />
+                        </form>
+                        <button type="submit" form="formPlayer">
+                            <p th:text="${personagem.mesa.nome}"/>
+                        </button>
                     </tr>
                 </div>
 
