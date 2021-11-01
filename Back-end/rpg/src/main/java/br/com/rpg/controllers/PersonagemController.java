@@ -21,7 +21,7 @@ public class PersonagemController {
   }
 
   @GetMapping("/{id}")
-  public EntidadePersonagem procurar(@PathVariable Long id) throws Exception {
+  public EntidadePersonagem procurar(@PathVariable Long id) throws RuntimeException {
     return personService.findById(id);
   }
 
@@ -33,12 +33,12 @@ public class PersonagemController {
 
   @PutMapping("/{id}")
   public EntidadePersonagem modificar(@PathVariable Long id, @RequestBody EntidadePersonagem user)
-      throws Exception {
+      throws RuntimeException {
     return personService.modificar(id, user);
   }
 
   @DeleteMapping("/{id}")
-  public String deletar(@PathVariable Long id) throws Exception {
+  public String deletar(@PathVariable Long id) throws RuntimeException {
     return personService.deletar(id);
   }
 }

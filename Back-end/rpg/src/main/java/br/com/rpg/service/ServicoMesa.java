@@ -8,8 +8,10 @@ import br.com.rpg.repository.BasicRepository;
 import br.com.rpg.repository.RepositorioMesa;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -38,25 +40,29 @@ public class ServicoMesa {
     return mesaRepository.save(mesa);
   }
 
-  public EntidadeMesa findById(Long id) throws Exception {
-    return mesaRepository.findById(id).orElseThrow(() -> new Exception("Mesa nao encontrada"));
+  public EntidadeMesa findById(Long id) throws RuntimeException {
+    return mesaRepository
+        .findById(id)
+        .orElseThrow(() -> new RuntimeException("Mesa nao encontrada"));
   }
 
-  public String deletar(Long id) throws Exception {
+  public String deletar(Long id) throws RuntimeException {
     EntidadeMesa mesa = findById(id);
     mesaRepository.delete(mesa);
     return "mesa deletada";
   }
 
-  public EntidadeMesa modificar(Long id, EntidadeMesa mesaAlterada) throws Exception {
+  public EntidadeMesa modificar(Long id, EntidadeMesa mesaAlterada) throws RuntimeException {
     EntidadeMesa mesa = findById(id);
-    mesa.setNome(mesaAlterada.getNome());
-    mesa.setMestre(mesaAlterada.getMestre());
-    mesa.setPersonagens(mesaAlterada.getPersonagens());
+    if (Objects.nonNull(mesaAlterada.getNome())) {
+      mesa.setNome(mesaAlterada.getNome());
+    }
+    if (Objects.nonNull(mesaAlterada.getMestre())) {
+      mesa.setMestre(mesaAlterada.getMestre());
+    }
+    if (!ObjectUtils.isEmpty(mesaAlterada.getPersonagens())) {
+      mesa.setPersonagens(mesaAlterada.getPersonagens());
+    }
     return mesaRepository.save(mesa);
   }
 }
-/*
-
-  }
-*/

@@ -20,9 +20,8 @@
                             <input type="text" name="idMesa" th:value="${mesa.id}" />
                             <input type="text" name="papel" value="MESTRE" />
                         </form>
-                        <button type="submit" form="formMestre">
-                            <p th:text="${mesa.nome}"/>
-                        </button>
+                        <button type="submit" form="formMestre"><img src="/styles/images/Dice.png" /></button>
+
                     </tr>
                 </div>
             </div>
@@ -38,9 +37,8 @@
                             <input type="text" name="idPersonagem" th:value="${personagem.id}" />
                             <input type="text" name="papel" value="JOGADOR" />
                         </form>
-                        <button type="submit" form="formPlayer">
-                            <p th:text="${personagem.mesa.nome}"/>
-                        </button>
+                        <button type="submit" form="formPlayer"><img src="/styles/images/Dice.png" /></button>
+
                     </tr>
                 </div>
 

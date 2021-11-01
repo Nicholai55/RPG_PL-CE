@@ -21,7 +21,7 @@ public class MesaController {
   }
 
   @GetMapping("/{id}")
-  public EntidadeMesa procurar(@PathVariable Long id) throws Exception {
+  public EntidadeMesa procurar(@PathVariable Long id) throws RuntimeException {
     return mesaService.findById(id);
   }
 
@@ -33,12 +33,12 @@ public class MesaController {
 
   @PutMapping("/{id}")
   public EntidadeMesa modificar(@PathVariable Long id, @RequestBody EntidadeMesa mesa)
-      throws Exception {
+      throws RuntimeException {
     return mesaService.modificar(id, mesa);
   }
 
   @DeleteMapping("/{id}")
-  public String deletar(@PathVariable Long id) throws Exception {
+  public String deletar(@PathVariable Long id) throws RuntimeException {
     return mesaService.deletar(id);
   }
 }

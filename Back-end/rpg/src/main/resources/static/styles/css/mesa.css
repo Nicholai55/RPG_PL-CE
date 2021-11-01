@@ -77,8 +77,8 @@ body {
 }
 
 .create-room img {
-	width: 100px;
-	margin: -15 10px;
+	width: 80px;
+	margin: -25 10px;
 	box-shadow: 0 0 20px 0 #7f7f7f3d;
 	cursor: pointer;
 }
@@ -91,8 +91,8 @@ body {
 }
 
 .join-room img {
-	width: 100px;
-	margin: -15 10px;
+	width: 80px;
+	margin: -25 10px;
 	box-shadow: 0 0 20px 0 #7f7f7f3d;
 	cursor: pointer;
 }
