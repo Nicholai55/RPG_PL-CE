@@ -9,21 +9,21 @@
   </head>
   <body>
     <header class="header">
-      <h1>Nome Mesa</h1>
-      <h1>Codigo</h1>
+      <h2>Nome Mesa</h2>
+      <h2>Codigo</h2>
     </header>
     <div class="content">
       <div class="avatar-wrapper">
-            <div class="avatar">
-              <img src="mestre.png" id="foto" alt="" />
-              <p>Mestre</p>
-            </div>
+        <div class="avatar">
+          <img src="mestre.png" id="foto" alt="" />
+          <p>Mestre</p>
+        </div>
         <div class="jogadores">
           <div class="avatar">
             <img src="avatar.jpg" id="foto" alt="" />
             <p>Player1</p>
           </div>
-          <div class="ficha">
+          <div class="fichaP">
             <img src="ficha.png" id="fotof" alt="" />
           </div>
         </div>
@@ -80,14 +80,13 @@
           <a href="#" id="polygon" onclick="ChangeTool('polygon')"
             ><img src="hexagon.png"
           /></a>
-          <button type="button" class="button">Undo</button>
-          <button type="button" class="button">Clear</button>
         </div>
         <div class="wrapper">
           <br />
           <canvas id="my-canvas" width="600" height="600"></canvas>
           <div id="img-data-div">
-            <a href="#" id="img-file" download="image.png">download image</a>
+            <button type="button" class="button">Undo</button>
+            <button type="button" class="button">Clear</button>
           </div>
         </div>
       </div>
