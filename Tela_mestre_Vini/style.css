@@ -141,12 +141,14 @@ body {
 
 .fichaP {
   width: 30%;
+  cursor: pointer;
   height: 50%;
   margin-top: 4%;
 }
 
 .ficha {
   width: 30%;
+  cursor: pointer;
   height: 50%;
   margin-top: 4%;
 }
