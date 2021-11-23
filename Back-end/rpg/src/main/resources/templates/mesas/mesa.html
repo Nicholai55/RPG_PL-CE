@@ -2,16 +2,18 @@
 <head>
     <title>Login And Registration Form</title>
     <link rel="stylesheet" href="/styles/css/mesa.css">
+    <script src="/styles/js/mesa.js"></script>
 </head>
     <body>
         <div class="general">
-            <p th:text="${id}"/>
-            <p th:text="${nome}"/>
-            <p th:text="${email}"/>
             <div class="container-mestre">
                 <!--maximo 13 salas -->
                 <div class="image-create-room">
-                    <img src="/styles/images/temporaryPlus.jpg">
+                    <form id="novaMesa" method="POST" action="/nova_mesa"
+                          modelAttribute="idMestre" hidden>
+                        <input type="text" name="idJogador" th:value="${id}" />
+                    </form>
+                    <button type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="create-room">
                     <tr th:each="mesa: ${mesas}">
@@ -27,7 +29,13 @@
             </div>
             <div class="container-player">
                 <div class="image-join-room">
-                    <img src="/styles/images/temporaryPlus.jpg">
+                    <form id="novaMesa" method="POST" action="/nova_mesa"
+                          modelAttribute="codigoMesa" hidden>
+                        <input type="text" name="codigoMesa" th:value="valorVindoDoPrompt" />
+                        <input type="text" name="idJogador" th:value="${id}" />
+
+                    </form>
+                    <button type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="join-room">
                     <tr th:each="personagem: ${personagens}">
@@ -44,7 +52,5 @@
 
             </div>
         </div>
-        <script>
-        </script>
     </body>
 </html>

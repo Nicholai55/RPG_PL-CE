@@ -10,6 +10,10 @@ import lombok.RequiredArgsConstructor;
 public class FormMesa {
 
     private Long idMesa;
+    private String codigoMesa;
     private Long idPersonagem;
     private Papel papel;
+    private Long idJogador;
+
+
 }

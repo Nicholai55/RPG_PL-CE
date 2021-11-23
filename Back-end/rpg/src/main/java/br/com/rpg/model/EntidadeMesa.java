@@ -21,7 +21,8 @@ public class EntidadeMesa {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column private String nome;
+  @Column
+  private String nome;
 
   @OneToOne
   @JoinColumn(name = "usuariosId")
@@ -29,6 +30,10 @@ public class EntidadeMesa {
   private EntidadeUsuario mestre;
 
   @OneToMany private List<EntidadePersonagem> personagens;
+
+  @Column
+  private String codigo;
+
 }
 
 // @JsonIgnore

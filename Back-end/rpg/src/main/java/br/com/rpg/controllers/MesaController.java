@@ -1,9 +1,12 @@
 package br.com.rpg.controllers;
 
 import br.com.rpg.model.EntidadeMesa;
+import br.com.rpg.model.EntidadeUsuario;
 import br.com.rpg.service.ServicoMesa;
+import br.com.rpg.service.ServicoUsuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +30,7 @@ public class MesaController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public EntidadeMesa criar(@RequestBody EntidadeMesa mesa) {
+  public EntidadeMesa criar(EntidadeMesa mesa) {
     return mesaService.criar(mesa);
   }
 

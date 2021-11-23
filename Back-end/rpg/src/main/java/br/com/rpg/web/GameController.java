@@ -21,29 +21,31 @@ public class GameController {
   private final ServicoMesa mesaService;
   private final ServicoPersonagem personService;
 
-  @GetMapping
+  @GetMapping("/game_mestre")
   public String mesaGame() {
-    return "game/game";
+    return "game/game_mestre";
+  }
+
+  @GetMapping("/game_player")
+  public String mesaGame2() {
+    return "game/game_player";
   }
 
   @PostMapping
-  public String mesaMestre(@ModelAttribute("mesa") FormMesa form, Model model) throws Exception {
+  public String mesaMestre(@ModelAttribute("mesa") FormMesa form, Model model) throws RuntimeException {
 
     if (form.getPapel() == Papel.MESTRE) {
-      var mc = new MesaController(mesaService);
-      var mesaEscolhida = mc.procurar(form.getIdMesa());
+      var mesaEscolhida = mesaService.findById(form.getIdMesa());
       model.addAttribute("mesa",mesaEscolhida);
-      return "game/game";
+      return "game/game_mestre";
     }
 
     if (form.getPapel() == Papel.JOGADOR) {
-      var mc = new MesaController(mesaService);
-      var mesaEscolhida = mc.procurar(form.getIdMesa());
-      var pc = new PersonagemController(personService);
-      var personagem = pc.procurar(form.getIdPersonagem());
+      var mesaEscolhida = mesaService.findById(form.getIdMesa());
+      var personagem = personService.findById(form.getIdPersonagem());
       model.addAttribute("mesa",mesaEscolhida);
       model.addAttribute("personagem",personagem);
-      return "game/game";
+      return "game/game_player";
     }
 
     return "game/game";

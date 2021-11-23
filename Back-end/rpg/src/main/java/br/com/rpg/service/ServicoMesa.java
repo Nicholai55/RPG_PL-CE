@@ -45,6 +45,9 @@ public class ServicoMesa {
         .findById(id)
         .orElseThrow(() -> new RuntimeException("Mesa nao encontrada"));
   }
+  public EntidadeMesa findBycodigo(String codigo) throws RuntimeException {
+    return mesaRepository.findMesaByCodigo(codigo);
+  }
 
   public String deletar(Long id) throws RuntimeException {
     EntidadeMesa mesa = findById(id);
