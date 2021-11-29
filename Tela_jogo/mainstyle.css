@@ -3,7 +3,8 @@ body {
 }
 
 .avatar-wrapper {
-  width: 100px;
+  width: 0%;
+  margin: auto;
 }
 
 .avatar {
@@ -20,20 +21,17 @@ body {
   width: 100%;
 }
 
-.chat-wrapper {
-  width: 450px;
-}
-
 .wrapper {
   width: 100%;
   max-width: 770px;
   font-family: "Arial";
+  margin: auto;
+  margin-left: 0;
 }
 
-.mensagem {
-  right: 70px;
-  top: 125px;
-  max-width: 400px;
+.chat-wrapper {
+  width: 10%;
+  margin: auto;
 }
 
 #chat {
@@ -43,9 +41,10 @@ body {
 }
 
 .toolbar {
-  width: 100%;
+  width: 50%;
   background-color: #444444;
   overflow: auto;
+  margin: auto;
 }
 
 .toolbar a {
@@ -68,8 +67,9 @@ body {
 }
 
 #my-canvas {
-  width: 100%;
+  width: 120%;
   border: 3px solid #000000;
+  margin-left: -25%;
 }
 
 #img-data-div {
@@ -80,4 +80,10 @@ body {
 .toolbar a img {
   max-width: 100%;
   height: auto;
+}
+
+.ficha {
+  width: 15%;
+  margin: auto;
+  margin-left: 15%;
 }

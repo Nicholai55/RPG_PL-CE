@@ -4,8 +4,10 @@ import br.com.rpg.model.EntidadeUsuario;
 import br.com.rpg.repository.RepositorioUsuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -21,8 +23,10 @@ public class ServicoUsuario {
     return userRepository.save(user);
   }
 
-  public EntidadeUsuario findById(Long id) throws Exception {
-    return userRepository.findById(id).orElseThrow(() -> new Exception("Cliente nao encontrado"));
+  public EntidadeUsuario findById(Long id) throws RuntimeException {
+    return userRepository
+        .findById(id)
+        .orElseThrow(() -> new RuntimeException("Cliente nao encontrado"));
   }
 
   public EntidadeUsuario validar(EntidadeUsuario user) {
@@ -46,19 +50,30 @@ public class ServicoUsuario {
     return user;
   }
 
-  public String deletar(Long id) throws Exception {
+  public String deletar(Long id) throws RuntimeException {
     EntidadeUsuario user = findById(id);
     userRepository.delete(user);
     return ("usuario deletado");
   }
 
-  public EntidadeUsuario modificar(Long id, EntidadeUsuario userAlterado) throws Exception {
+  public EntidadeUsuario modificar(Long id, EntidadeUsuario userAlterado) throws RuntimeException {
     EntidadeUsuario user = findById(id);
-    user.setNome(userAlterado.getNome());
-    user.setEmail(userAlterado.getEmail());
-    user.setSenha(userAlterado.getSenha());
-    user.setMesas(userAlterado.getMesas());
-    user.setPersonagens(userAlterado.getPersonagens());
+    if (Objects.nonNull(userAlterado.getNome())) {
+      user.setNome(userAlterado.getNome());
+    }
+    if (Objects.nonNull(userAlterado.getEmail())) {
+      user.setEmail(userAlterado.getEmail());
+    }
+    if (Objects.nonNull(userAlterado.getSenha())) {
+      user.setSenha(userAlterado.getSenha());
+    }
+    if (!ObjectUtils.isEmpty(userAlterado.getMesas())) {
+      user.setMesas(userAlterado.getMesas());
+    }
+    if (!ObjectUtils.isEmpty(userAlterado.getPersonagens())) {
+      user.setPersonagens(userAlterado.getPersonagens());
+    }
+
     return userRepository.save(user);
   }
 }

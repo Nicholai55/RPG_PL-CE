@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/css/game_mestre.css" />
+    <script src="/styles/js/game_mestre.js"></script>
+    <title>RPG</title>
+  </head>
+  <body>
+    <header class="header">
+      <form class="nomeMesa">
+        <input type="text" name="nome" th:value="${mesa.nome}">
+        <button type="submit" class="button">Alterar</button>
+      </form>
+      <h2 th:text="${mesa.codigo}" />
+    </header>
+    <div class="content">
+      <div class="avatar-wrapper">
+        <div class="avatar">
+          <img src="/styles/images/mestre.png" id="foto" alt="" />
+          <p th:text="${mesa.mestre.nome}"></p>
+        </div>
+        <div class="jogadores" th:each="personagem: ${mesa.personagens}">
+          <div class="avatar">
+            <img src="/styles/images/avatar.jpg" id="foto" alt="" />
+            <p th:text="${personagem.nome}" />
+          </div>
+          <div class="fichaP">
+            <img src="/styles/images/ficha.png" id="fotof" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="div2">
+        <div class="toolbar">
+          <a class="selected" href="#" id="open" onclick="OpenImage()"
+            ><img src="/styles/images/open-folder.png"
+          /></a>
+          <a href="#" id="save" onclick="SaveImage()"><img src="/styles/images/save.png" /></a>
+          <a href="#" id="brush" onclick="ChangeTool('brush')"
+            ><img src="/styles/images/pencil.png"
+          /></a>
+          <a href="#" id="line" onclick="ChangeTool('line')"
+            ><img src="/styles/images/line.png"
+          /></a>
+          <a href="#" id="rectangle" onclick="ChangeTool('rectangle')"
+            ><img src="/styles/images/square.png"
+          /></a>
+          <a href="#" id="circle" onclick="ChangeTool('circle')"
+            ><img src="/styles/images/circle.png"
+          /></a>
+          <a href="#" id="ellipse" onclick="ChangeTool('ellipse')"
+            ><img src="/styles/images/elipse.png"
+          /></a>
+          <a href="#" id="polygon" onclick="ChangeTool('polygon')"
+            ><img src="/styles/images/hexagon.png"
+          /></a>
+        </div>
+        <div class="wrapper">
+          <br />
+          <canvas id="my-canvas" width="600" height="600"></canvas>
+          <div id="img-data-div">
+            <button type="button" class="button">Undo</button>
+            <button type="button" class="button">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="div3">
+        <div class="chat-wrapper">
+          <div class="mensagem">
+            <div class="field-text">
+              <textarea
+                cols="50"
+                rows="48"
+                placeholder="Mensagens aqui"
+              ></textarea>
+            </div>
+            <div class="chatbox">
+              <input type="text" id="chat" placeholder="Digite aqui" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

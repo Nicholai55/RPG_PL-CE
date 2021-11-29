@@ -77,10 +77,19 @@ body {
 }
 
 .create-room img {
-	width: 100px;
-	margin: -15 10px;
+	width: 80px;
+	margin: -25 10px;
 	box-shadow: 0 0 20px 0 #7f7f7f3d;
 	cursor: pointer;
+}
+
+.botaoMestre {
+    background: none;
+    border: none;
+}
+.entrarMestre {
+    background: none;
+    border: none;
 }
 
 .join-room {
@@ -88,11 +97,23 @@ body {
 	margin-left: 150px;
 	text-align: left;
 	display: table;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .join-room img {
-	width: 100px;
-	margin: -15 10px;
+	width: 80px;
+	margin: -25 10px;
 	box-shadow: 0 0 20px 0 #7f7f7f3d;
 	cursor: pointer;
+}
+
+.botaoJogador {
+    background: none;
+    border: none;
+}
+.entrarJogador {
+    background: none;
+    border: none;
 }

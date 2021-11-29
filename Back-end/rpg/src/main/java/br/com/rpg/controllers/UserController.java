@@ -21,7 +21,7 @@ public class UserController {
   }
 
   @GetMapping("/{id}")
-  public EntidadeUsuario procurar(@PathVariable Long id) throws Exception {
+  public EntidadeUsuario procurar(@PathVariable Long id) throws RuntimeException {
     return userService.findById(id);
   }
 
@@ -44,12 +44,12 @@ public class UserController {
 
   @PutMapping("/{id}")
   public EntidadeUsuario modificar(@PathVariable Long id, @RequestBody EntidadeUsuario user)
-      throws Exception {
+      throws RuntimeException {
     return userService.modificar(id, user);
   }
 
   @DeleteMapping("/{id}")
-  public String deletar(@PathVariable Long id) throws Exception {
+  public String deletar(@PathVariable Long id) throws RuntimeException {
     return userService.deletar(id);
   }
 }

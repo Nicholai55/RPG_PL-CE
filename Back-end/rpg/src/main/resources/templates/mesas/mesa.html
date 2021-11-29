@@ -2,38 +2,58 @@
 <head>
     <title>Login And Registration Form</title>
     <link rel="stylesheet" href="/styles/css/mesa.css">
+    <script src="/styles/js/mesa.js"></script>
 </head>
     <body>
         <div class="general">
-            <p th:text="${id}"/>
-            <p th:text="${nome}"/>
-            <p th:text="${email}"/>
             <div class="container-mestre">
                 <!--maximo 13 salas -->
                 <div class="image-create-room">
-                    <img src="/styles/images/temporaryPlus.jpg">
+                    <form id="novaMesa" method="POST" action="/nova_mesa"
+                          modelAttribute="idMestre" hidden>
+                        <input type="text" name="idJogador" th:value="${id}" />
+                    </form>
+                    <button class="botaoMestre" type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="create-room">
                     <tr th:each="mesa: ${mesas}">
-                        <td th:text="${mesa.id}"/>
-                        <td th:text="${mesa.nome}"/>
+                        <form id="formMestre" method="POST" action="/game"
+                              modelAttribute="mesa" hidden>
+                            <input type="text" name="idMesa" th:value="${mesa.id}" />
+                            <input type="text" name="papel" value="MESTRE" />
+                        </form>
+                        <button class="entrarMestre" type="submit" form="formMestre"><img src="/styles/images/Dice.png" /></button>
+
                     </tr>
                 </div>
             </div>
+            <h1>Mestre</h1>
             <div class="container-player">
+
                 <div class="image-join-room">
-                    <img src="/styles/images/temporaryPlus.jpg">
+                    <form id="" method="POST" action="/"
+                          modelAttribute="codigoMesa" hidden>
+                        <input type="text" name="codigoMesa" th:value="valorVindoDoPrompt" />
+                        <input type="text" name="idJogador" th:value="${id}" />
+
+                    </form>
+                    <button class="botaoJogador" onclick="funcaoJs()" id="ajaxButton" type="submit" form=""><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="join-room">
                     <tr th:each="personagem: ${personagens}">
-                        <td th:text="${personagem.mesa.id}"/>
-                        <td th:text="${personagem.mesa.nome}"/>
+                        <form id="formPlayer" method="POST" action="/game"
+                              modelAttribute="mesa" hidden>
+                            <input type="text" name="idMesa" th:value="${personagem.mesa.id}" />
+                            <input type="text" name="idPersonagem" th:value="${personagem.id}" />
+                            <input type="text" name="papel" value="JOGADOR" />
+                        </form>
+                        <button class="entrarJogador" type="submit" form="formPlayer"><img src="/styles/images/Dice.png" /></button>
+
                     </tr>
                 </div>
 
             </div>
+            <h1>Jogador</h1>
         </div>
-        <script>
-        </script>
     </body>
 </html>

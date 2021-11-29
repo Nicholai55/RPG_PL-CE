@@ -104,8 +104,9 @@ body {
 }
 
 .check-box {
-	margin: 30px 10px 30px 0;
-}
+  margin: 15px;
+  margin-left: -5px;
+ }
 
 span {
 	color: #777;
