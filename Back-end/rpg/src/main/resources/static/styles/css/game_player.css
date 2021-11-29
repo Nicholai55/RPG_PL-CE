@@ -65,6 +65,7 @@ body {
 .formUser input {
   border: 0;
   appearance: none;
+  font-size: 20px;
 }
 
 .formUser button {
@@ -76,6 +77,7 @@ body {
   border: 0;
   outline: none;
   border-radius: 30px;
+  font-size: 16px;
 }
 
 .avatar {

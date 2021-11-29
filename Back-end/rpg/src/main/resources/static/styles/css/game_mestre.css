@@ -3,6 +3,10 @@
   justify-content: space-between;
 }
 
+* {
+    font-family: "Times New Roman", Times, serif;
+}
+
 .header h2 {
   margin: 1% 4%;
 }
@@ -24,6 +28,7 @@
 .nomeMesa input {
   border: 0;
   appearance: none;
+  font-size: 20px;
 }
 
 .nomeMesa button {
@@ -35,6 +40,7 @@
   border: 0;
   outline: none;
   border-radius: 30px;
+  font-size: 16px;
 }
 
 .div1 {

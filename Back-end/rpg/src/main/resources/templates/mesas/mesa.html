@@ -13,7 +13,7 @@
                           modelAttribute="idMestre" hidden>
                         <input type="text" name="idJogador" th:value="${id}" />
                     </form>
-                    <button type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
+                    <button class="botaoMestre" type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="create-room">
                     <tr th:each="mesa: ${mesas}">
@@ -22,20 +22,22 @@
                             <input type="text" name="idMesa" th:value="${mesa.id}" />
                             <input type="text" name="papel" value="MESTRE" />
                         </form>
-                        <button type="submit" form="formMestre"><img src="/styles/images/Dice.png" /></button>
+                        <button class="entrarMestre" type="submit" form="formMestre"><img src="/styles/images/Dice.png" /></button>
 
                     </tr>
                 </div>
             </div>
+            <h1>Mestre</h1>
             <div class="container-player">
+
                 <div class="image-join-room">
-                    <form id="novaMesa" method="POST" action="/nova_mesa"
+                    <form id="" method="POST" action="/"
                           modelAttribute="codigoMesa" hidden>
                         <input type="text" name="codigoMesa" th:value="valorVindoDoPrompt" />
                         <input type="text" name="idJogador" th:value="${id}" />
 
                     </form>
-                    <button type="submit" form="novaMesa"><img src="/styles/images/temporaryPlus.jpg" /></button>
+                    <button class="botaoJogador" onclick="funcaoJs()" id="ajaxButton" type="submit" form=""><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="join-room">
                     <tr th:each="personagem: ${personagens}">
@@ -45,12 +47,13 @@
                             <input type="text" name="idPersonagem" th:value="${personagem.id}" />
                             <input type="text" name="papel" value="JOGADOR" />
                         </form>
-                        <button type="submit" form="formPlayer"><img src="/styles/images/Dice.png" /></button>
+                        <button class="entrarJogador" type="submit" form="formPlayer"><img src="/styles/images/Dice.png" /></button>
 
                     </tr>
                 </div>
 
             </div>
+            <h1>Jogador</h1>
         </div>
     </body>
 </html>

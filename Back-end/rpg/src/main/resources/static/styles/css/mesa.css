@@ -83,11 +83,23 @@ body {
 	cursor: pointer;
 }
 
+.botaoMestre {
+    background: none;
+    border: none;
+}
+.entrarMestre {
+    background: none;
+    border: none;
+}
+
 .join-room {
 	margin: 30px auto;
 	margin-left: 150px;
 	text-align: left;
 	display: table;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .join-room img {
@@ -95,4 +107,13 @@ body {
 	margin: -25 10px;
 	box-shadow: 0 0 20px 0 #7f7f7f3d;
 	cursor: pointer;
+}
+
+.botaoJogador {
+    background: none;
+    border: none;
+}
+.entrarJogador {
+    background: none;
+    border: none;
 }
