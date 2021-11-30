@@ -9,13 +9,14 @@
   </head>
   <body>
     <header class="header">
-      <h2>Nome Mesa</h2>
-      <h2>Codigo</h2>
+      <h2 th:text="${mesa.nome}" />
+      <h2 th:text="${mesa.codigo}" />
     </header>
     <div class="content">
       <div class="avatar-wrapper">
-        <form class="formUser">
+        <form class="formUser" modelAttribute="nomePersonagem" method="POST" action="/alterar_nome_personagem">
           <input type="text" name="nome" th:value="${personagem.nome}">
+          <input type="hidden" name="id" th:value="${personagem.id}">
           <button type="submit" class="button">Alterar</button>
         </form>
         <div class="avatar">

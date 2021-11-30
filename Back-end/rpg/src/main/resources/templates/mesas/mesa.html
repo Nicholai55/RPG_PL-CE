@@ -29,15 +29,12 @@
             </div>
             <h1>Mestre</h1>
             <div class="container-player">
-
                 <div class="image-join-room">
-                    <form id="" method="POST" action="/"
+                    <form id="formJogador" method="POST" action="/"
                           modelAttribute="codigoMesa" hidden>
-                        <input type="text" name="codigoMesa" th:value="valorVindoDoPrompt" />
-                        <input type="text" name="idJogador" th:value="${id}" />
-
+                        <input id="userId" type="text" th:value="${id}" />>
                     </form>
-                    <button class="botaoJogador" onclick="funcaoJs()" id="ajaxButton" type="submit" form=""><img src="/styles/images/temporaryPlus.jpg" /></button>
+                    <button class="botaoJogador" onclick="funcaoJs()" id="ajaxButton" type="submit"><img src="/styles/images/temporaryPlus.jpg" /></button>
                 </div>
                 <div class="join-room">
                     <tr th:each="personagem: ${personagens}">
@@ -48,7 +45,6 @@
                             <input type="text" name="papel" value="JOGADOR" />
                         </form>
                         <button class="entrarJogador" type="submit" form="formPlayer"><img src="/styles/images/Dice.png" /></button>
-
                     </tr>
                 </div>
 
