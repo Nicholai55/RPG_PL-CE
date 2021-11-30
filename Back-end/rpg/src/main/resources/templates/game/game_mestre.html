@@ -9,9 +9,10 @@
   </head>
   <body>
     <header class="header">
-      <form class="nomeMesa">
+      <form id="nomeMesa" class="nomeMesa" modelAttribute="nomeMesa" method="POST" action="/alterar_nome_mesa">
         <input type="text" name="nome" th:value="${mesa.nome}">
-        <button type="submit" class="button">Alterar</button>
+        <input type="hidden" name="id" th:value="${mesa.id}">
+        <button type="submit" form="nomeMesa" class="button">Alterar</button>
       </form>
       <h2 th:text="${mesa.codigo}" />
     </header>

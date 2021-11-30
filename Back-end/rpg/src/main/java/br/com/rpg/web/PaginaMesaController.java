@@ -10,12 +10,14 @@ import br.com.rpg.service.ServicoPersonagem;
 import br.com.rpg.service.ServicoUsuario;
 import br.com.rpg.web.webClass.FormMesa;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Random;
 
@@ -28,6 +30,9 @@ public class PaginaMesaController {
     private final ServicoMesa mesaService;
     private final ServicoUsuario userService;
     private final ServicoPersonagem personService;
+
+    @Autowired
+    private HttpServletRequest request;
 
     @PostMapping("/homepage_principal")
     public String validaLogin(Model model, @ModelAttribute("user") EntidadeUsuario user) {
@@ -85,9 +90,11 @@ public class PaginaMesaController {
     }
 
     @PostMapping("/entrando_na_mesa")
-    public String entrandoNaMesa(Model model, @ModelAttribute("codigoMesa") FormMesa formMesa) {
-        var user = userService.findById(formMesa.getIdJogador());
-        var mesa = mesaService.findBycodigo(formMesa.getCodigoMesa());
+    public String entrandoNaMesa(Model model) { // Model model, @ModelAttribute("codigoMesa") String codigo,@ModelAttribute("userId") String id
+        var codigoMesa = request.getHeader("codigoMesa");
+        var userId = request.getHeader("userId");
+        var user = userService.findById(Long.valueOf(userId));
+        var mesa = mesaService.findBycodigo(codigoMesa);
         var personagem = criaPersonagem(user, mesa);
 
         var personagensDoUsuario = user.getPersonagens();
